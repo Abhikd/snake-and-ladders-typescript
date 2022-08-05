@@ -31,7 +31,11 @@ function App() {
       let tempValue = numbers[index];
       console.log(tempValue);
       let temp = index;
+      if(temp + roll <=99){
       temp = temp + roll;
+      if(temp === 99) {
+        alert("Player One won!");
+       }
       if(numbers[temp] === "P2") numbers[temp] = "P1 P2"
       else numbers[temp] = "P1";
       if(numbers[index] === "P1 P2") numbers[index] = "P2";
@@ -39,7 +43,9 @@ function App() {
       setGameState(numbers);
       setIndex(temp);
       document.getElementById("p")!.innerHTML = roll.toString();
-      setP2(0);
+      setP2(0); 
+    }
+    else document.getElementById("p")!.innerHTML = roll.toString();
       }
 
       else {
@@ -48,7 +54,11 @@ function App() {
         let tempValue2 = numbers[index2];
         console.log(tempValue2);
         let temp2 = index2;
+        if(temp2 + roll <= 99){
         temp2 = temp2 + roll;
+        if(temp2 === 99){
+          alert("Player 2 won!")
+        }
         if(numbers[temp2] === "P1") numbers[temp2] = "P1 P2" ;
         else numbers[temp2] = "P2"; 
         if(numbers[index2] === "P1 P2") numbers[index2] = "P1"
@@ -57,6 +67,8 @@ function App() {
         setIndex2(temp2);
         document.getElementById("p")!.innerHTML = roll.toString();
         setP2(1);
+        }
+        else document.getElementById("p")!.innerHTML = roll.toString();
       }
 
     }
