@@ -20,17 +20,45 @@ function App() {
     
     const [index, setIndex] = useState(0);
 
+    const [index2, setIndex2] = useState(0);
+
+    const [p1, setP2] = useState(1);
+
     const onRolled = () => {
+      if(p1){
       let roll = Math.floor(Math.random() * 6) + 1;;
       let numbers = Array.from(gameState);
       let tempValue = numbers[index];
       console.log(tempValue);
       let temp = index;
       temp = temp + roll;
-      numbers[temp] = "P1";
-      numbers[index] = initialState[index];
+      if(numbers[temp] === "P2") numbers[temp] = "P1 P2"
+      else numbers[temp] = "P1";
+      if(numbers[index] === "P1 P2") numbers[index] = "P2";
+      else numbers[index] = initialState[index];
       setGameState(numbers);
       setIndex(temp);
+      document.getElementById("p")!.innerHTML = roll.toString();
+      setP2(0);
+      }
+
+      else {
+        let roll = Math.floor(Math.random() * 6) + 1;;
+        let numbers = Array.from(gameState);
+        let tempValue2 = numbers[index2];
+        console.log(tempValue2);
+        let temp2 = index2;
+        temp2 = temp2 + roll;
+        if(numbers[temp2] === "P1") numbers[temp2] = "P1 P2" ;
+        else numbers[temp2] = "P2"; 
+        if(numbers[index2] === "P1 P2") numbers[index2] = "P1"
+        else numbers[index2] = initialState[index2];
+        setGameState(numbers);
+        setIndex2(temp2);
+        document.getElementById("p")!.innerHTML = roll.toString();
+        setP2(1);
+      }
+
     }
 
   return (
@@ -167,7 +195,9 @@ function App() {
      </div>
      </div>
 
-     <button onClick={() => onRolled()} />
+     <button onClick={() => onRolled()} >Roll</button>
+
+     <p id="p">0</p>
 
     </div>
   );
