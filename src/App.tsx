@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Snake from './Snake';
 import Square from './Square';
 
 const initialState: string[]  = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
@@ -29,13 +30,17 @@ function App() {
       let roll = Math.floor(Math.random() * 6) + 1;;
       let numbers = Array.from(gameState);
       let tempValue = numbers[index];
-      console.log(tempValue);
       let temp = index;
       if(temp + roll <=99){
       temp = temp + roll;
       if(temp === 99) {
         alert("Player One won!");
        }
+      else if(temp === 47  || temp === 76  || temp === 97) {
+        if(temp === 47) temp = 1;
+        else if(temp === 76) temp = 42;
+        else if(temp === 97) temp = 9;
+       } 
       if(numbers[temp] === "P2") numbers[temp] = "P1 P2"
       else numbers[temp] = "P1";
       if(numbers[index] === "P1 P2") numbers[index] = "P2";
@@ -59,6 +64,11 @@ function App() {
         if(temp2 === 99){
           alert("Player 2 won!")
         }
+        if(temp2 === 47  || temp2 === 76  || temp2 === 97) {
+          if(temp2 === 47) temp2 = 1;
+          else if(temp2 === 76) temp2 = 42;
+          else if(temp2 === 97) temp2 = 9;
+         } 
         if(numbers[temp2] === "P1") numbers[temp2] = "P1 P2" ;
         else numbers[temp2] = "P2"; 
         if(numbers[index2] === "P1 P2") numbers[index2] = "P1"
@@ -207,10 +217,11 @@ function App() {
      </div>
      </div>
 
-     <button onClick={() => onRolled()} >Roll</button>
+     <button style={{zIndex: 100}}  onClick={() => onRolled()} >Roll</button>
 
      <p id="p">0</p>
 
+   <Snake />
     </div>
   );
 }
