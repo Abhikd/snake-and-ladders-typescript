@@ -6,6 +6,7 @@
   align-items: center;
   color: whitesmoke;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .column__Style{
@@ -21,6 +22,7 @@
 .board__Style{
   display: flex;
   flex-direction: row;
+  margin-top: 100px;
 }
 
 .snake__Style {
@@ -37,4 +39,20 @@
   transform: rotate(-50deg);
   margin-top: -700px;
   margin-left: 90px;
+}
+
+
+.ladder__Style{
+  margin-top: -300px;
+}
+
+.ladder1__Style{
+  margin-top: -400px;
+  transform:  rotate(-50deg);
+  margin-left: 300px;
+}
+
+.ladder2__Style{
+  margin-top: -220px;
+  margin-right: 420px;
 }

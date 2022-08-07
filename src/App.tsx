@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Snake from './Snake';
 import Square from './Square';
+import Ladder from './Ladder'
 
 const initialState: string[]  = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
                                  "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
@@ -41,6 +42,11 @@ function App() {
         else if(temp === 76) temp = 42;
         else if(temp === 97) temp = 9;
        } 
+       else if(temp === 19 || temp === 31 || temp === 59){
+        if(temp === 19) temp = 41;
+        else if(temp === 31) temp = 75;
+        else temp = 78;
+       }
       if(numbers[temp] === "P2") numbers[temp] = "P1 P2"
       else numbers[temp] = "P1";
       if(numbers[index] === "P1 P2") numbers[index] = "P2";
@@ -69,6 +75,11 @@ function App() {
           else if(temp2 === 76) temp2 = 42;
           else if(temp2 === 97) temp2 = 9;
          } 
+         else if(temp2 === 19 || temp2 === 41 || temp2 === 59){
+          if(temp2 === 19) temp2 = 45;
+          else if(temp2 === 41) temp2 = 75;
+          else temp2 = 78;
+         }
         if(numbers[temp2] === "P1") numbers[temp2] = "P1 P2" ;
         else numbers[temp2] = "P2"; 
         if(numbers[index2] === "P1 P2") numbers[index2] = "P1"
@@ -115,7 +126,7 @@ function App() {
      <div>
       <Square state={gameState[97]} />
       <Square state={gameState[82]} />
-      <Square state={gameState[78]} />
+      <Square state={gameState[77]} />
       <Square state={gameState[62]} />
       <Square state={gameState[57]} />
       <Square state={gameState[42]} />
@@ -128,7 +139,7 @@ function App() {
      <div>
       <Square state={gameState[96]} />
       <Square state={gameState[83]} />
-      <Square state={gameState[77]} />
+      <Square state={gameState[76]} />
       <Square state={gameState[63]} />
       <Square state={gameState[56]} />
       <Square state={gameState[43]} />
@@ -141,7 +152,7 @@ function App() {
      <div>
       <Square state={gameState[95]} />
       <Square state={gameState[84]} />
-      <Square state={gameState[76]} />
+      <Square state={gameState[75]} />
       <Square state={gameState[64]} />
       <Square state={gameState[55]} />
       <Square state={gameState[44]} />
@@ -154,7 +165,7 @@ function App() {
      <div>
       <Square state={gameState[94]} />
       <Square state={gameState[85]} />
-      <Square state={gameState[75]} />
+      <Square state={gameState[74]} />
       <Square state={gameState[65]} />
       <Square state={gameState[54]} />
       <Square state={gameState[45]} />
@@ -167,7 +178,7 @@ function App() {
      <div>
       <Square state={gameState[93]} />
       <Square state={gameState[86]} />
-      <Square state={gameState[74]} />
+      <Square state={gameState[73]} />
       <Square state={gameState[66]} />
       <Square state={gameState[53]} />
       <Square state={gameState[46]} />
@@ -180,7 +191,7 @@ function App() {
      <div>
       <Square state={gameState[92]} />
       <Square state={gameState[87]} />
-      <Square state={gameState[73]} />
+      <Square state={gameState[72]} />
       <Square state={gameState[67]} />
       <Square state={gameState[52]} />
       <Square state={gameState[47]} />
@@ -193,7 +204,7 @@ function App() {
      <div>
       <Square state={gameState[91]} />
       <Square state={gameState[88]} />
-      <Square state={gameState[72]} />
+      <Square state={gameState[71]} />
       <Square state={gameState[68]} />
       <Square state={gameState[51]} />
       <Square state={gameState[48]} />
@@ -206,7 +217,7 @@ function App() {
      <div>
       <Square state={gameState[90]} />
       <Square state={gameState[89]} />
-      <Square state={gameState[71]} />
+      <Square state={gameState[70]} />
       <Square state={gameState[69]} />
       <Square state={gameState[50]} />
       <Square state={gameState[49]} />
@@ -222,7 +233,9 @@ function App() {
      <p id="p">0</p>
 
    <Snake />
-    </div>
+
+    <Ladder />
+     </div>
   );
 }
 
