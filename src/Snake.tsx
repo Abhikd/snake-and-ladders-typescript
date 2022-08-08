@@ -1,27 +1,27 @@
 import React from 'react'
 
 const Snake = () => {
-  return (
-    <div>
-         <div className='snake__Style'>
+    return (
+        <div>
+            <div className='snake__Style'>
 
-     <img src={require('./snake.png')} height="210px" width="200px"></img>
+                <img src={require('./snake.png')} height="210px" width="200px"></img>
 
-     </div>
+            </div>
 
-     <div className='snake2__Style'>
+            <div className='snake2__Style'>
 
-     <img src={require('./snake.png')} height="400px" width="300px"></img>
+                <img src={require('./snake.png')} height="400px" width="300px"></img>
 
-     </div>
+            </div>
 
-     <div className='snake3__Style'>
+            <div className='snake3__Style'>
 
-     <img src={require('./snake.png')} height="670px" width="300px"></img>
+                <img src={require('./snake.png')} height="670px" width="300px"></img>
 
-     </div>
-    </div>
-  )
+            </div>
+        </div>
+    )
 }
 
 export default Snake

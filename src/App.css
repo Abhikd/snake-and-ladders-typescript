@@ -22,37 +22,38 @@
 .board__Style{
   display: flex;
   flex-direction: row;
-  margin-top: 100px;
+  margin-top: 10px;
 }
 
 .snake__Style {
-  margin-top: -450px;
+  margin-top: -500px;
   transform: rotate(15deg);
 }
 
 .snake2__Style {
   transform: rotate(40deg);
-  margin-top: -140px;
+  margin-top: -160px;
 }
 
 .snake3__Style {
   transform: rotate(-50deg);
-  margin-top: -700px;
+  margin-top: -710px;
   margin-left: 90px;
 }
 
 
 .ladder__Style{
-  margin-top: -300px;
+  margin-top: -220px;
+  transform: rotate(30deg);
 }
 
 .ladder1__Style{
-  margin-top: -400px;
+  margin-top: -500px;
   transform:  rotate(-50deg);
   margin-left: 300px;
 }
 
 .ladder2__Style{
-  margin-top: -220px;
+  margin-top: -200px;
   margin-right: 420px;
 }
